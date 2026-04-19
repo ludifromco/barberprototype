@@ -83,12 +83,12 @@ export default function Header() {
             </a>
           </div>
 
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex md:hidden items-center gap-1 min-w-0">
             <a
               href={bookingTelHref()}
-              className="text-xs font-semibold text-primary px-2 py-2 min-h-11 flex items-center"
+              className="text-xs font-semibold text-primary px-2 py-2 min-h-11 flex items-center max-w-[10.5rem] truncate sm:max-w-none sm:whitespace-nowrap"
             >
-              Call
+              {SITE.phoneDisplay}
             </a>
             <button
               type="button"

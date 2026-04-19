@@ -6,39 +6,39 @@ import { useInViewItemIds } from '@/hooks/use-in-view-item-ids'
 const testimonials = [
   {
     id: 1,
-    attribution: 'Linda M.',
+    attribution: 'Mike R.',
     rating: 5,
-    text: 'I always leave feeling relaxed and refreshed.',
+    text: "Best haircut I've had in a long time.",
   },
   {
     id: 2,
-    attribution: 'Karen D.',
+    attribution: 'James T.',
     rating: 5,
-    text: 'The staff is so professional and the space is very clean.',
+    text: 'Fast, clean, and professional every time.',
   },
   {
     id: 3,
-    attribution: 'Michelle R.',
+    attribution: 'Carlos M.',
     rating: 5,
-    text: 'Best spa experience I have had in a long time.',
+    text: 'Great atmosphere and solid barbers.',
   },
   {
     id: 4,
-    attribution: 'Susan T.',
+    attribution: 'David L.',
     rating: 5,
-    text: 'Easy booking and amazing results every time.',
+    text: "I don't go anywhere else now.",
   },
   {
     id: 5,
-    attribution: 'Patricia L.',
+    attribution: 'Brian K.',
     rating: 5,
-    text: 'My facial and massage were both excellent. I felt cared for from start to finish.',
+    text: 'Solid fades and friendly service.',
   },
   {
     id: 6,
-    attribution: 'Diane B.',
+    attribution: 'Steve P.',
     rating: 5,
-    text: 'I booked for nails and left with so much confidence. Beautiful results.',
+    text: 'In and out without feeling rushed.',
   },
 ]
 
@@ -46,7 +46,7 @@ export default function Testimonials() {
   const { visibleIds, setItemRef } = useInViewItemIds(testimonials.length)
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-secondary/40">
+    <section id="testimonials" className="py-24 md:py-32 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 md:mb-20 max-w-2xl mx-auto">
           <div className="flex items-center justify-center gap-2 mb-5">
@@ -57,10 +57,10 @@ export default function Testimonials() {
             <Star className="text-accent fill-accent" size={22} aria-hidden />
           </div>
           <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground mb-6 text-balance">
-            Trusted by local clients
+            What locals say
           </h2>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-            Real feedback from guests who keep coming back.
+            Straight talk from regulars who keep coming back.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function Testimonials() {
                   : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="bg-card rounded-xl border border-border/80 shadow-sm hover:shadow-md transition-shadow p-7 h-full flex flex-col">
+              <div className="bg-card rounded-xl border border-border/80 shadow-sm hover:shadow-md transition-shadow p-7 md:p-8 h-full flex flex-col">
                 <div className="flex gap-1 mb-4" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star

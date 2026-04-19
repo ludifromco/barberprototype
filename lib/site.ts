@@ -1,24 +1,23 @@
 /** Central contact and business copy — replace URL with production domain when live. */
 export const SITE = {
-  name: 'Salon & Spa At Sun City Center',
-  legalName: 'Salon & Spa At Sun City Center',
-  phoneTel: '+18132603997',
-  phoneDisplay: '+1 (813) 260-3997',
-  streetAddress: '723 Imar Dr',
+  name: 'Sun City Barber',
+  legalName: 'Sun City Barber',
+  phoneTel: '+18135644081',
+  phoneDisplay: '+1 (813) 564-4081',
+  streetAddress: '908 N Pebble Beach Blvd',
   addressLocality: 'Sun City Center',
   addressRegion: 'FL',
   postalCode: '33573',
   addressCountry: 'US',
   addressLines: [
-    '723 Imar Dr',
+    '908 N Pebble Beach Blvd',
     'Sun City Center, FL 33573',
   ],
-  url: 'https://salonspasuncitycenter.com',
+  url: 'https://suncitybarber.com',
   bookingSectionId: 'book',
   hours: {
-    weekday: 'Mon-Fri: 9am-7pm',
-    saturday: 'Saturday: 9am-6pm',
-    sunday: 'Sunday: By appointment',
+    weekday: 'Mon–Fri: 8 AM – 4 PM',
+    weekend: 'Sat–Sun: Closed',
   },
 } as const
 

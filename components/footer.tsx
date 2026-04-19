@@ -1,23 +1,22 @@
 import Link from 'next/link'
 import { MapPin, Phone, Clock } from 'lucide-react'
-import { SITE, bookingTelHref } from '@/lib/site'
+import { SITE, bookingHashHref, bookingTelHref } from '@/lib/site'
 
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-card text-foreground border-t border-border py-14 md:py-20">
+    <footer className="bg-card text-foreground border-t border-border py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10 mb-14">
           <div>
             <h2 className="text-2xl font-serif font-semibold mb-4">{SITE.name}</h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Professional salon and spa care in a clean, calming space designed around your
-              comfort.
+              Sharp cuts and honest service — your local barbershop in Sun City Center.
             </p>
             <a
-              href={bookingTelHref()}
-              className="inline-flex items-center justify-center mt-8 w-full sm:w-auto bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-semibold text-sm hover:bg-primary/90 transition-colors min-h-11"
+              href={bookingHashHref()}
+              className="inline-flex items-center justify-center mt-8 w-full sm:w-auto bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-semibold text-sm hover:bg-primary/90 transition-colors min-h-12"
             >
               Book Appointment
             </a>
@@ -41,12 +40,11 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4 flex gap-2 items-center text-foreground">
               <Clock size={20} className="text-accent shrink-0" aria-hidden />
-              Business hours
+              Hours
             </h3>
             <div className="text-muted-foreground text-sm space-y-1.5">
               <p>{SITE.hours.weekday}</p>
-              <p>{SITE.hours.saturday}</p>
-              <p>{SITE.hours.sunday}</p>
+              <p>{SITE.hours.weekend}</p>
             </div>
             <a
               href={bookingTelHref()}

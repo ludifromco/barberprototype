@@ -6,7 +6,7 @@ export default function Trust() {
   return (
     <section
       id="trust"
-      className="py-16 md:py-20 bg-background border-y border-border/60"
+      className="py-20 md:py-24 bg-background border-y border-border/60"
       aria-labelledby="trust-heading"
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -17,11 +17,10 @@ export default function Trust() {
           id="trust-heading"
           className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-5 text-balance"
         >
-          Your Comfort &amp; Satisfaction Matter
+          Quality Cuts. Every Time.
         </h2>
         <p className="text-lg text-muted-foreground text-pretty leading-relaxed max-w-2xl mx-auto">
-          We&apos;re committed to providing a relaxing experience and results you&apos;ll love.
-          If you&apos;re not satisfied, we&apos;ll make it right.
+          We take pride in every cut. If it&apos;s not right, we&apos;ll fix it.
         </p>
       </div>
     </section>

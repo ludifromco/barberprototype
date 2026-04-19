@@ -1,105 +1,138 @@
 'use client'
 
 import Image from 'next/image'
-import { Sparkles } from 'lucide-react'
+import { Scissors, Target, Clock, MapPin, ShieldCheck } from 'lucide-react'
 import { useInViewItemIds } from '@/hooks/use-in-view-item-ids'
 import { IMAGES } from '@/lib/images'
-import { bookingHashHref } from '@/lib/site'
+import { SITE, bookingHashHref } from '@/lib/site'
 
-const services = [
+const reasons = [
   {
     id: 1,
-    name: 'Hair Services',
-    description: 'Fresh cuts, color, and styling designed to keep you looking polished between visits.',
-    image: IMAGES.services.hair,
+    icon: Target,
+    title: 'Cuts built around your hair',
+    text: 'We shape every haircut to your hair type and head—not a generic template.',
   },
   {
     id: 2,
-    name: 'Nails',
-    description: 'Clean, polished, and long-lasting manicures and pedicures for a put-together finish.',
-    image: IMAGES.services.nails,
+    icon: Scissors,
+    title: 'Real barber technique',
+    text: 'Clippers, shears, and line work when each one earns its place.',
   },
   {
     id: 3,
-    name: 'Facials',
-    description: 'Restore your natural glow with personalized skin care that leaves your face refreshed.',
-    image: IMAGES.services.facials,
+    icon: Clock,
+    title: 'Fast without cutting corners',
+    text: 'Most haircuts run about 20–30 minutes—efficient, not rushed.',
   },
   {
     id: 4,
-    name: 'Massage',
-    description: 'Relax, unwind, and relieve tension with soothing treatments tailored to your needs.',
-    image: IMAGES.services.massage,
+    icon: MapPin,
+    title: 'Your neighborhood shop',
+    text: 'Straight answers, fair work, and a chair you can count on in Sun City Center.',
   },
   {
     id: 5,
-    name: 'Waxing',
-    description: 'Smooth results with gentle, professional waxing in a clean and comfortable setting.',
-    image: IMAGES.services.waxing,
+    icon: ShieldCheck,
+    title: 'Same standard, every visit',
+    text: 'First cut or your regular chair—you get a finished, confident look every time.',
   },
 ]
 
+function ReasonCard({
+  item,
+  index,
+  setItemRef,
+  visible,
+}: {
+  item: (typeof reasons)[number]
+  index: number
+  setItemRef: (index: number) => (el: HTMLDivElement | null) => void
+  visible: boolean
+}) {
+  const Icon = item.icon
+  return (
+    <div
+      ref={setItemRef(index)}
+      data-id={item.id}
+      className={`flex h-full flex-col items-center rounded-2xl border border-border/80 bg-card px-6 py-8 text-center shadow-sm transition-all duration-700 md:px-7 md:py-9 ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+    >
+      <div
+        className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"
+        aria-hidden
+      >
+        <Icon className="h-6 w-6" strokeWidth={1.75} />
+      </div>
+      <h3 className="font-serif text-lg font-semibold text-foreground md:text-xl">
+        {item.title}
+      </h3>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+    </div>
+  )
+}
+
 export default function Services() {
-  const { visibleIds, setItemRef } = useInViewItemIds(services.length)
+  const { visibleIds, setItemRef } = useInViewItemIds(reasons.length)
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 md:mb-20 max-w-2xl mx-auto">
-          <div className="flex items-center justify-center gap-2 mb-5">
-            <Sparkles className="text-accent" size={22} aria-hidden />
-            <span className="text-accent font-semibold text-sm tracking-wide">
-              SERVICES
-            </span>
-            <Sparkles className="text-accent" size={22} aria-hidden />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground mb-6 text-balance">
-            Services designed around your comfort
+    <section id="services" className="relative py-24 md:py-32">
+      <div className="absolute inset-0 bg-secondary/35" aria-hidden />
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-12 max-w-2xl text-center md:mb-14">
+          <span className="text-accent font-semibold text-sm tracking-wide">HAIRCUTS</span>
+          <h2 className="mt-4 font-serif text-4xl font-semibold text-foreground text-balance md:text-5xl">
+            Why we&apos;re known for the cut
           </h2>
-          <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-            Choose the care you need now and book in seconds.
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground text-pretty">
+            Sun City Barber is a barbershop first: one focus—clean, confident haircuts—and we
+            take that seriously.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {services.map((service, index) => (
-            <div
-              key={service.id}
-              ref={setItemRef(index)}
-              data-id={service.id}
-              className={`transition-all duration-700 ${
-                visibleIds.has(service.id)
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-8'
-              }`}
-            >
-              <div className="bg-card rounded-xl overflow-hidden border border-border/80 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                <div className="relative h-56 overflow-hidden bg-secondary">
-                  <Image
-                    src={service.image}
-                    alt={`${service.name} at Salon & Spa At Sun City Center`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="p-6 md:p-7 flex flex-col flex-1">
-                  <h3 className="text-xl font-serif font-semibold text-foreground mb-2">
-                    {service.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed flex-1">
-                    {service.description}
-                  </p>
-                  <a
-                    href={bookingHashHref()}
-                    className="w-full bg-primary text-primary-foreground py-3 rounded-full font-semibold text-sm hover:bg-primary/90 transition-colors text-center min-h-11 inline-flex items-center justify-center"
-                  >
-                    Book Appointment
-                  </a>
-                </div>
-              </div>
-            </div>
+        <div className="mx-auto mb-14 max-w-4xl md:mb-16">
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border/60 bg-secondary shadow-md ring-1 ring-black/5">
+            <Image
+              src={IMAGES.haircutShowcase}
+              alt={`Precision haircut at ${SITE.name}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
+              priority={false}
+            />
+          </div>
+        </div>
+
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-7">
+          {reasons.slice(0, 4).map((item, index) => (
+            <ReasonCard
+              key={item.id}
+              item={item}
+              index={index}
+              setItemRef={setItemRef}
+              visible={visibleIds.has(item.id)}
+            />
           ))}
+          <div className="md:col-span-2 flex justify-center">
+            <div className="w-full max-w-md md:max-w-lg">
+              <ReasonCard
+                item={reasons[4]}
+                index={4}
+                setItemRef={setItemRef}
+                visible={visibleIds.has(reasons[4].id)}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 flex justify-center md:mt-14">
+          <a
+            href={bookingHashHref()}
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-10 py-4 text-base font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+          >
+            Book Appointment
+          </a>
         </div>
       </div>
     </section>

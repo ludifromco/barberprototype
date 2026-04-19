@@ -4,7 +4,7 @@ export default function FinalCta() {
   return (
     <section
       id="book"
-      className="py-20 md:py-28 bg-foreground text-background"
+      className="py-24 md:py-32 bg-foreground text-background"
       aria-labelledby="final-cta-heading"
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -12,7 +12,7 @@ export default function FinalCta() {
           id="final-cta-heading"
           className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold mb-5 text-balance"
         >
-          Ready to Relax and Refresh?
+          Ready for a Fresh Cut?
         </h2>
         <p className="text-lg text-white/80 mb-10 text-pretty leading-relaxed">
           Book your appointment today.

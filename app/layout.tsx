@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'BeautySalon',
+  '@type': 'HairSalon',
   name: SITE.legalName,
   telephone: SITE.phoneTel,
   url: SITE.url,
@@ -29,38 +29,25 @@ const localBusinessJsonLd = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '10:00',
-      closes: '19:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '10:00',
-      closes: '18:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Sunday',
-      opens: '12:00',
-      closes: '17:00',
+      opens: '08:00',
+      closes: '16:00',
     },
   ],
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: `${SITE.name} | Salon and Spa | Sun City Center, FL`,
+  title: `${SITE.name} | Barber Shop | Sun City Center, FL`,
   description:
-    'Relaxing salon and spa care in Sun City Center. Hair, nails, facials, massage, and waxing with quick and easy booking.',
+    'Professional haircuts, fades, beard trims, and hot towel shaves in Sun City Center. Walk-ins welcome. Book your appointment.',
   keywords: [
-    'salon and spa',
+    'barber',
+    'barbershop',
+    'haircut',
+    'fade',
+    'beard trim',
     'Sun City Center',
-    'hair salon',
-    'nails',
-    'facials',
-    'massage',
-    'waxing',
-    'Salon & Spa At Sun City Center',
+    'Sun City Barber',
   ],
   authors: [{ name: SITE.name }],
   creator: SITE.name,
@@ -71,23 +58,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} | Relaxing Salon and Spa Care`,
+    title: `${SITE.name} | Sharp Cuts. Clean Style.`,
     description:
-      'Full-service salon and spa treatments designed to help you look and feel amazing. Book your appointment today.',
+      'Professional barber services in Sun City Center — haircuts, fades, beard trims, and more. Book your appointment.',
     images: [
       {
         url: IMAGES.og,
         width: 1200,
         height: 630,
-        alt: 'Salon & Spa At Sun City Center — calming spa interior',
+        alt: 'Sun City Barber — professional barber service',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE.name} | Relax. Refresh. Feel Your Best.`,
+    title: `${SITE.name} | Sharp Cuts. Clean Style.`,
     description:
-      'Hair, nails, facials, massage, and waxing in Sun City Center. Quick and easy booking.',
+      'Haircuts, fades, and beard trims in Sun City Center. Walk-ins welcome. Book today.',
   },
   icons: {
     icon: [
@@ -114,8 +101,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f9f7f6' },
-    { media: '(prefers-color-scheme: dark)', color: '#1a1a1a' },
+    { media: '(prefers-color-scheme: light)', color: '#fafaf9' },
+    { media: '(prefers-color-scheme: dark)', color: '#0c0a09' },
   ],
 }
 

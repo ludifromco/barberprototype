@@ -10,38 +10,38 @@ import { bookingHashHref } from '@/lib/site'
 
 const faqs = [
   {
-    q: 'How do I book an appointment?',
-    a: 'Tap any Book Appointment button and call us to reserve your preferred time.',
+    q: 'Do you take walk-ins?',
+    a: 'Yes, walk-ins are welcome.',
   },
   {
-    q: 'Do you accept walk-ins?',
-    a: 'Yes, when availability allows. Booking ahead is the best way to secure your slot.',
+    q: 'How long does a haircut take?',
+    a: 'Typically 20–30 minutes.',
   },
   {
-    q: 'What services do you offer?',
-    a: 'We offer hair services, nails, facials, massage, and waxing.',
+    q: 'Do I need an appointment?',
+    a: 'Appointments recommended, but not required.',
   },
   {
-    q: 'How long do services take?',
-    a: 'Most appointments take 45 to 120 minutes depending on your selected service.',
+    q: 'What payment methods do you accept?',
+    a: 'Cash and standard payment options.',
   },
   {
-    q: 'What is your cancellation policy?',
-    a: 'Please provide at least 24 hours notice for cancellations or rescheduling.',
+    q: 'How do I book?',
+    a: 'Tap Book Appointment and call us to reserve your time.',
   },
 ]
 
 export default function Faq() {
   return (
-    <section id="faq" className="py-20 md:py-28 bg-secondary/40">
+    <section id="faq" className="py-24 md:py-32 bg-secondary/50">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-14">
           <span className="text-accent font-semibold text-sm tracking-wide">FAQ</span>
           <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground mt-4 mb-4 text-balance">
-            Common questions
+            Quick answers
           </h2>
           <p className="text-muted-foreground text-pretty">
-            Straight answers so you can book with confidence.
+            Know before you go — then book with confidence.
           </p>
         </div>
 

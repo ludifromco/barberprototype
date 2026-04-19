@@ -24,7 +24,7 @@ export default function TermsPage() {
             24 hours notice for cancellations or rescheduling.
           </p>
           <p>
-            Late arrivals may shorten service time to avoid delays for other guests. Service
+            Late arrivals may shorten service time to avoid delays for other clients. Service
             pricing and availability are subject to change.
           </p>
           <p>

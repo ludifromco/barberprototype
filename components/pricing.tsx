@@ -7,32 +7,25 @@ import { bookingHashHref } from '@/lib/site'
 const pricingTiers = [
   {
     id: 1,
-    name: 'Basic Care',
-    range: '~$50–$70',
-    description: 'Essential service',
-    features: ['Perfect for regular upkeep', 'Simple, focused appointment', 'Comfort-first care'],
+    name: 'Basic Cut',
+    range: '~$20–$30',
+    description: 'Standard haircut',
+    features: ['Clean, professional cut', 'Great for regular upkeep', 'In and out on your schedule'],
   },
   {
     id: 2,
-    name: 'Signature Treatment',
-    range: '~$80–$120',
-    description: 'Most popular services',
-    features: ['Our most booked options', 'Balanced time and value', 'Great for monthly self-care'],
+    name: 'Cut + Beard',
+    range: '~$30–$45',
+    description: 'Haircut + beard trim',
+    features: ['Matched haircut and beard', 'Sharp lines where it counts', 'Most popular combo'],
     highlighted: true,
   },
   {
     id: 3,
-    name: 'Luxury Experience',
-    range: '~$150+',
-    description: 'Full spa treatment',
-    features: ['Extended service time', 'Head-to-toe refresh', 'Premium relaxation experience'],
-  },
-  {
-    id: 4,
-    name: 'Monthly Wellness Plan',
-    range: 'From $129/mo',
-    description: 'Membership option',
-    features: ['One featured service per month', 'Priority booking windows', 'Member-only upgrade pricing'],
+    name: 'Full Service',
+    range: '~$50+',
+    description: 'Haircut + shave + styling',
+    features: ['Full barber service', 'Hot towel finish available', 'When you want the works'],
   },
 ]
 
@@ -40,21 +33,21 @@ export default function Pricing() {
   const { visibleIds, setItemRef } = useInViewItemIds(pricingTiers.length)
 
   return (
-    <section id="pricing" className="py-20 md:py-28 bg-secondary/40">
+    <section id="pricing" className="py-24 md:py-32 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 md:mb-20 max-w-2xl mx-auto">
           <span className="text-accent font-semibold text-sm tracking-wide">
             PRICING
           </span>
           <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground mt-4 mb-6 text-balance">
-            Clear pricing. Easy decisions.
+            Simple rates. No guesswork.
           </h2>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-            Pick the level that fits your goals. Then reserve your appointment.
+            Ranges are estimates — final price depends on service. Call to book.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-6 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 mb-16">
           {pricingTiers.map((tier, index) => (
             <div
               key={tier.id}
@@ -67,7 +60,7 @@ export default function Pricing() {
               }`}
             >
               <div
-                className={`rounded-xl border p-8 h-full flex flex-col ${
+                className={`rounded-xl border p-8 md:p-9 h-full flex flex-col ${
                   tier.highlighted
                     ? 'bg-card border-primary shadow-md ring-2 ring-primary/20 md:scale-[1.02]'
                     : 'bg-card border-border/80 shadow-sm'
@@ -89,7 +82,7 @@ export default function Pricing() {
                 <p className="text-3xl font-bold text-foreground mb-6">
                   {tier.range}
                 </p>
-                <ul className="space-y-3 mb-8 flex-grow">
+                <ul className="space-y-3 mb-10 flex-grow">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex gap-3 text-sm text-foreground">
                       <Check
@@ -103,7 +96,7 @@ export default function Pricing() {
                 </ul>
                 <a
                   href={bookingHashHref()}
-                  className="w-full bg-primary text-primary-foreground py-3.5 rounded-full font-semibold hover:bg-primary/90 transition-colors text-center min-h-11 inline-flex items-center justify-center"
+                  className="w-full bg-primary text-primary-foreground py-3.5 rounded-full font-semibold hover:bg-primary/90 transition-colors text-center min-h-12 inline-flex items-center justify-center"
                 >
                   Book Appointment
                 </a>

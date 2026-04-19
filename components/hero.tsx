@@ -17,26 +17,26 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src={IMAGES.hero}
-          alt="Calming spa treatment room with soft natural light"
+          alt="Barber providing a precision haircut"
           fill
           className="object-cover"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#10201a]/40 via-[#10201a]/35 to-[#10201a]/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/60" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24 md:py-32">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-28 md:py-36">
         <div
           className={`text-center max-w-3xl mx-auto transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-semibold text-white mb-6 text-pretty tracking-tight">
-            Relax. Refresh. Feel Your Best.
+            Sharp Cuts. Clean Style.
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto text-pretty leading-relaxed">
-            Full-service salon and spa treatments designed to help you look and feel amazing.
+            Professional barber services to keep you looking your best.
           </p>
           <a
             href={bookingHashHref()}
@@ -44,16 +44,10 @@ export default function Hero() {
           >
             Book Appointment
           </a>
-          <p className="mt-4 text-sm md:text-base text-white/85 font-medium">
-            Quick and easy booking
+          <p className="mt-5 text-sm md:text-base text-white/85 font-medium">
+            Walk-ins welcome • Fast service
           </p>
         </div>
-      </div>
-
-      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-10 motion-safe:animate-bounce">
-        <span className="text-white/80 text-xs md:text-sm font-medium">
-          Scroll to explore
-        </span>
       </div>
     </section>
   )
